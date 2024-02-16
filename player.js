@@ -21,6 +21,12 @@ function Player(x,y,w,h,col){
       //left arrow pressed
       this.x += 5
     }//end if
+    if(keyIsDown(38)){
+      this.y -= 5
+    }//end if
+     if(keyIsDown(40)){
+      this.y += 5
+    }//end if
     
   }//end update
 }//end player
