@@ -1,21 +1,19 @@
 let p;
 let backColour = "#003049"
 let activeX, activeY;
-
-
 function setup() {
   createCanvas(300, 300);
   p = new Player(150,150, 10,10,"#780000");
   activeX = 0;
+  activeY = 0;
   fillRooms();
 }
-
 function draw() {
   background(backColour);
   p.display();
   p.update();
   screenChange();
-  rooms[activeX].call();
+  rooms[activeY][activeX].call();
 }
 
 function screenChange(){
@@ -30,13 +28,11 @@ function screenChange(){
     p.x=width
   }//end if
   if(p.y > height){
-    //The play has crossed the right edge
-    backColour = "yellow"
+    activeY += 1
     p.y=0
   }//end if
    if(p.y < 0){
-    //The play has crossed the right edge
-    backColour = "#003049"
+   activeY -= 1
     p.y=height
   }//end if
   
