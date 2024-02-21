@@ -18,7 +18,7 @@ function draw() {
   for(i=0 ; i < w.length ; i++){
     w[i].display() 
   }//end loop
-  w.display(); 
+  checkForCollision();
   screenChange();
   rooms[activeY][activeX].call();
 }
