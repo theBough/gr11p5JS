@@ -1,20 +1,25 @@
-let p;
+let p,k;
 let backColour = "#003049"
 let activeX, activeY;
 let w =[]
 
 function setup() {
   createCanvas(300, 300);
-  p = new Player(150,150, 10,10,"#780000");
+  fillRooms();
+  p = new Player(150,150, 10,10,"#FFFFFF");
+  k = new Key(200,200,50,50);
   activeX = 0;
   activeY = 0;
-  fillRooms();
+  
  
 }
 function draw() {
   background(backColour);
   p.display();
   p.update();
+  k.display();
+  k.keyCollision();
+  k.update()
   for(i=0 ; i < w.length ; i++){
     w[i].display() 
   }//end loop
