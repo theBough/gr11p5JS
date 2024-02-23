@@ -8,7 +8,7 @@ function Key(x,y,w,h){
   this.img = loadImage("niners.png")
   
   this.display = function(){
-    if(rooms[activeY][activeX] === this.r){
+    if(rooms[activeY][activeX] === this.r  || this.have){
       this.img.resize(this.w, this.h);
       image(this.img, this.x, this.y)
     }
