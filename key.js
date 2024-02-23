@@ -5,10 +5,10 @@ function Key(x,y,w,h){
   this.h = h;
   this.r = rooms[0][0];
   this.have = false;
-  this.img("key.jpg")
+  this.img = loadImage("niners.png")
   
   this.display = function(){
-    if(rooms[ActiveY][activeX] === this.r){
+    if(rooms[activeY][activeX] === this.r){
       this.img.resize(this.w, this.h);
       image(this.img, this.x, this.y)
     }
