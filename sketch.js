@@ -1,4 +1,4 @@
-let p,k;
+let p,k,g;
 let backColour = "#003049"
 let activeX, activeY;
 let w =[]
@@ -8,18 +8,21 @@ function setup() {
   fillRooms();
   p = new Player(150,150, 10,10,"#FFFFFF");
   k = new Key(200,200,10,10);
+  g = new Gate(175,0,10,height,"#FFFFFF",rooms[0][0]);
   activeX = 0;
   activeY = 0;
-  
- 
 }
 function draw() {
   background(backColour);
   playerStuff();
   keyStuff();
-  wallStuff(); 
+  wallStuff();
+  gateStuff();
   screenChange();
   rooms[activeY][activeX].call();
+}
+function gateStuff(){
+  g.display();
 }
 function wallStuff(){
    for(i=0 ; i < w.length ; i++){
