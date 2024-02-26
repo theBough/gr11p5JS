@@ -15,26 +15,23 @@ function Gate(x,y,w,h,col,room){
   }//end display
   
   this.collision = function(){
-    //check if we hit the left of any wall
+    if(rooms[activeY][activeX] == this.room){
+       //check if we hit the left of any wall
     if (p.y <= this.y + this.h && p.y + p.h >= this.y && p.x <= this.x + this.w && p.x >= this.x) {
       p.x += 5
     }
-
     //check if we hit the right of any wall
     if (p.y <= this.y + this.h && p.y + p.h >= this.y && p.x + p.w >= this.x && p.x <= this.x + this.w) {
       p.x -= 5
     }
-
-
     if (p.x <= this.x + this.w && p.x + p.w >= this.x && p.y <= this.y + this.h && p.y >= this.y) {
       p.y += 5;
     }
-
     //check if we hit the top of any wall
     if (p.x <= this.x + this.w && p.x + p.w >= this.x && p.y + p.h >= this.y && p.y <= this.y + this.h) {
       p.y -= 5;
     }
-
-
+    }
+   
   }//end collision
 }//end Gate
