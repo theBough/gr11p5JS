@@ -23,6 +23,7 @@ function draw() {
 }
 function gateStuff(){
   g.display();
+  g.collision();
 }
 function wallStuff(){
    for(i=0 ; i < w.length ; i++){
