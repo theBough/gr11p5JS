@@ -7,7 +7,7 @@ function setup() {
   createCanvas(300, 300);
   fillRooms();
   p = new Player(150,150, 10,10,"#FFFFFF");
-  k = new Key(200,200,50,50);
+  k = new Key(200,200,10,10);
   activeX = 0;
   activeY = 0;
   
@@ -15,19 +15,27 @@ function setup() {
 }
 function draw() {
   background(backColour);
-  p.display();
-  p.update();
-  k.display();
-  k.keyCollision();
-  k.update()
-  for(i=0 ; i < w.length ; i++){
-    w[i].display() 
-  }//end loop
-  checkForCollision();
+  playerStuff();
+  keyStuff();
+  wallStuff(); 
   screenChange();
   rooms[activeY][activeX].call();
 }
-
+function wallStuff(){
+   for(i=0 ; i < w.length ; i++){
+    w[i].display() 
+  }//end loop
+  checkForCollision();
+}
+function keyStuff(){
+   k.display();
+  k.keyCollision();
+  k.update()  
+}                   
+function playerStuff(){
+   p.display();
+  p.update();
+}
 function screenChange(){
   if(p.x > width){
     //The play has crossed the right edge
@@ -49,7 +57,6 @@ function screenChange(){
   }//end if
   
 }//end screenchange
-
 
 
 
