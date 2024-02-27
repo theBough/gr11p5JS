@@ -15,41 +15,41 @@ function Gate(x, y, w, h, col, room) {
   }; //end display
 
   this.collision = function () {
-    if (rooms[activeY][activeX] == this.room) {
+    if (rooms[activeY][activeX] == this.room && this.locked) {
       //check if we hit the left of any wall
       if (
-        k.y <= this.y + this.h &&
-        k.y + k.h >= this.y &&
-        k.x <= this.x + this.w &&
-        k.x >= this.x
+        p.y <= this.y + this.h &&
+        p.y + p.h >= this.y &&
+        p.x <= this.x + this.w &&
+        p.x >= this.x
       ) {
-        k.x += 5;
+        p.x += 5;
       }
       //check if we hit the right of any wall
       if (
-        k.y <= this.y + this.h &&
-        k.y + k.h >= this.y &&
-        k.x + k.w >= this.x &&
-        k.x <= this.x + this.w
+        p.y <= this.y + this.h &&
+        p.y + p.h >= this.y &&
+        p.x + p.w >= this.x &&
+        p.x <= this.x + this.w
       ) {
-        k.x -= 5;
+        p.x -= 5;
       }
       if (
-        k.x <= this.x + this.w &&
-        k.x + k.w >= this.x &&
-        k.y <= this.y + this.h &&
-        k.y >= this.y
+        p.x <= this.x + this.w &&
+        p.x + p.w >= this.x &&
+        p.y <= this.y + this.h &&
+        p.y >= this.y
       ) {
-        k.y += 5;
+        p.y += 5;
       }
       //check if we hit the top of any wall
       if (
-        k.x <= this.x + this.w &&
-        k.x + k.w >= this.x &&
-        k.y + k.h >= this.y &&
-        k.y <= this.y + this.h
+        p.x <= this.x + this.w &&
+        p.x + p.w >= this.x &&
+        p.y + p.h >= this.y &&
+        p.y <= this.y + this.h
       ) {
-        k.y -= 5;
+        p.y -= 5;
       }
     }
   }; //end collision
