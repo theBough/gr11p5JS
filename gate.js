@@ -63,6 +63,7 @@ function Gate(x, y, w, h, col, room) {
         k.x >= this.x
       ) {
        this.locked =false;
+        k.show =false
       }
       //check if we hit the right of any wall
       if (
@@ -72,6 +73,7 @@ function Gate(x, y, w, h, col, room) {
         k.x <= this.x + this.w
       ) {
         this.locked =false;
+         k.show =false
       }
       if (
         k.x <= this.x + this.w &&
@@ -80,6 +82,7 @@ function Gate(x, y, w, h, col, room) {
         k.y >= this.y
       ) {
         this.locked =false;
+         k.show =false
       }
       //check if we hit the top of any wall
       if (
@@ -89,6 +92,7 @@ function Gate(x, y, w, h, col, room) {
         k.y <= this.y + this.h
       ) {
         this.locked =false;
+         k.show =false
       }
     }
   }; //end collision
