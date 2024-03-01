@@ -1,4 +1,4 @@
-let p, k, g;
+let p, k, g, myFont;
 let backColour = "#003049";
 let activeX, activeY;
 let w = [];
@@ -11,6 +11,7 @@ function setup() {
   g = new Gate(175, 0, 10, height, "#FFFFFF", rooms[0][0]);
   activeX = 0;
   activeY = 0;
+  myFont = loadFont("Anta.ttf")
 }
 function draw() {
   background(backColour);
@@ -19,7 +20,15 @@ function draw() {
   wallStuff();
   gateStuff();
   screenChange();
+  textStuff();
   rooms[activeY][activeX].call();
+}
+function textStuff(){
+  if(rooms[activeX][activeY] == roomZero){
+    textSize(10);
+    textFont(myFont);
+    text("CORBIN" , 20,20)
+  }
 }
 function gateStuff() {
   g.display();
