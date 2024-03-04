@@ -1,4 +1,4 @@
-let p, k, g, myFont;
+let p, k, g,g2,myFont;
 let backColour = "#003049";
 let activeX, activeY;
 let w = [];
@@ -9,6 +9,7 @@ function setup() {
   p = new Player(150, 150, 10, 10, "#FFFFFF");
   k = new Key(100, 200, 10, 10);
   g = new Gate(175, 0, 10, height, "#FFFFFF", rooms[0][0]);
+  g2 = new Gate(175, 0, 10, height, "black", rooms[1][0]);
   activeX = 0;
   activeY = 0;
   myFont = loadFont("Anta.ttf")
@@ -36,6 +37,11 @@ function gateStuff() {
   g.collision();
   // the gate called 'g' will be opened by the key 'k'
   g.keyCollision(k);
+  
+  g2.display();
+  g2.collision();
+  // the gate called 'g' will be opened by the key 'k'
+  g2.keyCollision(k);
 }
 function wallStuff() {
   for (i = 0; i < w.length; i++) {
