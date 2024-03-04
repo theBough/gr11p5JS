@@ -25,6 +25,7 @@ function draw() {
 }
 function textStuff(){
   if(rooms[activeX][activeY] == roomZero){
+    fill("black")
     textSize(10);
     textFont(myFont);
     text("CORBIN" , 20,20)
@@ -33,7 +34,8 @@ function textStuff(){
 function gateStuff() {
   g.display();
   g.collision();
-  g.keyCollision();
+  // the gate called 'g' will be opened by the key 'k'
+  g.keyCollision(k);
 }
 function wallStuff() {
   for (i = 0; i < w.length; i++) {
