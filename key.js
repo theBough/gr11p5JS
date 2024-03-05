@@ -1,9 +1,9 @@
-function Key(x, y, w, h) {
+function Key(x, y, w, h, r) {
   this.x = x;
   this.y = y;
   this.w = w;
   this.h = h;
-  this.r = rooms[0][0];
+  this.r = r;
   this.have = false;
   this.img = loadImage("keyAdventure.jpg");
   this.show = true;
