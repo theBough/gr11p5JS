@@ -17,16 +17,16 @@ function Mob(x,y,w,h,img,r,xSpeed, ySpeed){
   }//end display
   
   this.update = function(){
-    if(this.x > p.x){
-      this.xSpeed *= -1;
+    if(this.x < p.x){
+      this.x += this.xSpeed;
     }else{
-      this.xSpeed *= -1;
+      this.x -= this.xSpeed;
     }
-     if(this.y> p.y){
-      this.ySpeed *= -1;
+     if(this.y < p.y){
+      this.y += this.ySpeed;
     }else{
-      this.ySpeed *= -1;
+      this.y -= this.ySpeed;
     }
-    
+   
   }//end update
 }//end player
