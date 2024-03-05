@@ -1,4 +1,4 @@
-let p, k, g,g2,myFont;
+let p, k, g,g2,myFont,m;
 let backColour = "#003049";
 let activeX, activeY;
 let w = [];
@@ -7,9 +7,10 @@ function setup() {
   createCanvas(300, 300);
   fillRooms();
   p = new Player(150, 150, 10, 10, "#FFFFFF");
-  k = new Key(100, 200, 10, 10);
+  k = new Key(100, 200, 10, 10, rooms[0][0]);
   g = new Gate(175, 0, 10, height, "#FFFFFF", rooms[0][0]);
   g2 = new Gate(175, 0, 10, height, "black", rooms[1][0]);
+  m = new Mob(200, 200, 20, 20, "niners.png", rooms[1][0],0.2,0.2);
   activeX = 0;
   activeY = 0;
   myFont = loadFont("Anta.ttf")
@@ -22,7 +23,12 @@ function draw() {
   gateStuff();
   screenChange();
   textStuff();
+  mobStuff();
   rooms[activeY][activeX].call();
+}
+function mobStuff(){
+  m.display();
+  m.update();
 }
 function textStuff(){
   if(rooms[activeX][activeY] == roomZero){
