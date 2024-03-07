@@ -1,0 +1,19 @@
+let myFont2;
+let myButton;
+
+let startPage = function(){
+  w=[];
+  loadFont("Anta.ttf");
+  textSize(30);
+  textFont(myFont);
+  text("Adventure Game", 10,100);
+  
+  myButton.position(50,140);
+  myButton.mousePressed(() =>{
+    myButton.remove()
+    activeX = 0;
+    activeY = 0;
+    p.show = true
+  });
+  
+}
