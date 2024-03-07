@@ -6,12 +6,14 @@ let w = [];
 function setup() {
   createCanvas(300, 300);
   fillRooms();
-  p = new Player(150, 150, 10, 10, "#FFFFFF");
+  p = new Player(150, 150, 10, 10, "#FFFFFF",false);
   k = new Key(100, 200, 10, 10, rooms[0][0]);
   g = new Gate(175, 0, 10, height, "#FFFFFF", rooms[0][0]);
   g2 = new Gate(175, 0, 10, height, "black", rooms[1][0]);
   m = new Mob(200, 200, 20, 20, "niners.png", rooms[1][0],0.2,0.2);
-  activeX = 0;
+  myButton = createButton("START");
+  //Be sure to start your play in your startRoom
+  activeX = 3;
   activeY = 0;
   myFont = loadFont("Anta.ttf")
 }
@@ -31,7 +33,7 @@ function mobStuff(){
   m.update();
 }
 function textStuff(){
-  if(rooms[activeX][activeY] == roomZero){
+  if(rooms[activeY][activeX] == roomZero){
     fill("black")
     textSize(10);
     textFont(myFont);
