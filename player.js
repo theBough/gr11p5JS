@@ -1,13 +1,17 @@
-function Player(x,y,w,h,col){
+function Player(x,y,w,h,col, show){
   this.x = x;
   this.y = y;
   this.w = w;
   this.h = h; 
   this.col = col;
+  this.show = show
   
   this.display = function(){
-    fill(this.col)
-    rect(this.x, this.y, this.w, this.h)
+    if(this.show){
+       fill(this.col)
+      rect(this.x, this.y, this.w, this.h)
+    }
+   
   }//end display
   
   this.update = function(){
