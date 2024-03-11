@@ -31,6 +31,7 @@ function draw() {
 function mobStuff(){
   m.display();
   m.update();
+  m.mobCollision()
 }
 function textStuff(){
   if(rooms[activeY][activeX] == roomZero){
