@@ -4,11 +4,15 @@ let myButton;
 let startPage = function(){
   w=[];
   loadFont("Anta.ttf");
+  fill("white")
   textSize(30);
   textFont(myFont);
   text("Adventure Game", 10,100);
   
   myButton.position(50,140);
+  myButton.style("border-radius","50%")
+  myButton.style("font-size","24px")
+  myButton.style("cursor","pointer")
   myButton.mousePressed(() =>{
     myButton.remove()
     activeX = 0;
