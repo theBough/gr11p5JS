@@ -15,7 +15,6 @@ function Mob(x,y,w,h,img,r,xSpeed, ySpeed){
      image(this.img, this.x, this.y);
    }
   }//end display
-  
   this.update = function(){
     if(this.x < p.x){
       this.x += this.xSpeed;
@@ -29,4 +28,16 @@ function Mob(x,y,w,h,img,r,xSpeed, ySpeed){
     }
    
   }//end update
+  this.mobCollision = function () {
+    if (
+      p.y <= this.y + this.h &&
+      p.y + p.h >= this.y &&
+      p.x + p.w >= this.x &&
+      p.x <= this.x + this.w &&
+      this.r === rooms[activeY][activeX]
+    ) {
+      activeX = 0;
+      activeY = 0;
+    }
+  }; //end collision
 }//end player
